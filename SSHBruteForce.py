@@ -1,8 +1,10 @@
-from pwn impport *
+#!/usr/bin/env python
+
+from pwn import *
 import paramiko
 
-host = "127.0.0.1"
-username = "notroot"
+host = input("Please type in your targets IP address: ")	#user enters in host SSH IP
+username = input("Please type in your targets username: ")	#user enters in username they would like to use for brute force
 attempts = 0
 
 with open("ssh-common-passwords.txt", "r") as password_list:
