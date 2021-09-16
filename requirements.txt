@@ -4,3 +4,9 @@
 
 pwn
 paramiko
+datetime
+subprocess
+ipaddress
+socket
+threading
+queue
