@@ -1,8 +1,10 @@
-#
-# 03/01/2019
+#!/usr/bin/env python
+
 # This program asks the user to enter their network in CIDR format and scans it for available hosts
 # The user then chooses one of the available hosts for a port scan.
 # The results are output to a text file for later review.
+
+
 import datetime
 import subprocess
 import ipaddress
