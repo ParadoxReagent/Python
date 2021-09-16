@@ -1,2 +1,6 @@
+# This requirements.txt file is used to specify what dependencies are
+# needed to for the package to run rather than for deployment of a tested set of
+# packages.
+
 pwn
 paramiko
