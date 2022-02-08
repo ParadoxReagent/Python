@@ -4,3 +4,4 @@
 
 pwn
 paramiko
+nmap
