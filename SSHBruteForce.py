@@ -22,15 +22,3 @@ with open(password_file, "r") as password_list:
 		except paramiko.ssh_exception.AuthenticationException:
 			print("[X] Invalid password!")
 		attempts += 1
-
-
-		
-		## Implement nmap scan (or custom portscan.py) to detect SSH port number if not default - set as variable
-	
-## Give user ability to use whatever password file
-
-## Add persistant connection
-## Once connection established discover OS if unknown - PUT PEAS tool or similar - execute/output to file - GET file
-## Need shell to do this?
-
-## Add FTP scanner/brute force/mget all files?  Only run this scanner if FTP port is present/open?
