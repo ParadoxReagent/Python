@@ -46,5 +46,3 @@ with open(password_file, "r") as password_list:
 ## Add FTP scanner/brute force/mget all files?  Only run this scanner if FTP port is present/open? Drop PEAS and execute?
 
 ##SMBmap and crack? Enum shares?
-
-##Package into exe 
