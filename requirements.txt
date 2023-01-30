@@ -6,3 +6,4 @@ pwn
 paramiko
 nmap
 ftplib
+multiprocessing
