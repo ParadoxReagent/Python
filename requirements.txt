@@ -7,3 +7,13 @@ ftputil
 #pwntools
 psutil
 #watchdog
+
+
+-----------------------
+for astro
+-----------------------
+opencv-python-headless
+numpy
+astroalign
+scikit-image
+argparse
