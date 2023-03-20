@@ -3,12 +3,13 @@
 # packages.
 
 ftputil
-#dnspython
+dnspython
 #pwntools
 psutil
 #watchdog
-
-
+requests
+python-registry
+ftplib
 -----------------------
 for astro
 -----------------------

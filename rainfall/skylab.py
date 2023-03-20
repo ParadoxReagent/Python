@@ -6,7 +6,8 @@ scripts = {
     '1': 'overcast.py',  # scanner
     '2': 'cloudburst.py',  # service stopper
     '3': 'coldfront.py',  # delete backups
-    '4': 'test.py'  # test samples
+    '4': 'test.py',  # test samples
+    '5': 'deluge.py'  # flood
 }
 
 # Display menu options
