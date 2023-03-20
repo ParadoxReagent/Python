@@ -4,9 +4,8 @@
 
 ftputil
 dnspython
-#pwntools
 psutil
-#watchdog
+watchdog
 requests
 python-registry
 ftplib
