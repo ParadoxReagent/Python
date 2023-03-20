@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80ca4ee8-fd35-4166-9b39-4e8895df227b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/FTP_Brute" beforeDir="false" afterPath="$PROJECT_DIR$/Archived/FTP_Brute" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PortScan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Archived/PortScan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Potpourri.py" beforeDir="false" afterPath="$PROJECT_DIR$/Archived/Potpourri.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SHA256crack.py" beforeDir="false" afterPath="$PROJECT_DIR$/Archived/SHA256crack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SSHBruteForce.py" beforeDir="false" afterPath="$PROJECT_DIR$/Archived/SSHBruteForce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anon_ftp" beforeDir="false" afterPath="$PROJECT_DIR$/Archived/anon_ftp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

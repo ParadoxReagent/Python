@@ -2,6 +2,9 @@
 # needed to for the package to run rather than for deployment of a tested set of
 # packages.
 
+####################
+## For rainfall   ##
+####################
 ftputil
 dnspython
 psutil
@@ -9,9 +12,10 @@ watchdog
 requests
 python-registry
 ftplib
------------------------
-for astro
------------------------
+
+####################
+## For astro      ##
+####################
 opencv-python-headless
 numpy
 astroalign
