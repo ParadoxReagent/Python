@@ -1,3 +1,5 @@
+#process hollowing test
+
 import ctypes
 import os
 
@@ -66,7 +68,7 @@ def resume_process(process_info):
 
 if __name__ == "__main__":
     target_process_path = "notepad.exe"  # Replace with the path to the target process
-    payload_path = "calc.exe"  # Replace with the path to the payload process
+    payload_path = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"  # Replace with the path to the payload process
 
     process_info = create_suspended_process(target_process_path)
     if process_info:
