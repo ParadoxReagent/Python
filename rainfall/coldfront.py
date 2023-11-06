@@ -1,3 +1,5 @@
+# finds and deletes backups
+
 import os
 
 # Define a list of file extensions to delete

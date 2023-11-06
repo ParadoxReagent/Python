@@ -8,16 +8,16 @@
 ftputil
 dnspython
 psutil
-watchdog
+#watchdog
 requests
 python-registry
-ftplib
+#ftplib (doesn't exist?)
 
 ####################
 ## For astro      ##
 ####################
-opencv-python-headless
-numpy
-astroalign
-scikit-image
-argparse
+#opencv-python-headless
+#numpy
+#astroalign
+#scikit-image
+#argparse
