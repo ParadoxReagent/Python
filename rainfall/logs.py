@@ -1,3 +1,5 @@
+# clears windows event logs via api
+
 import ctypes
 from ctypes import wintypes
 
