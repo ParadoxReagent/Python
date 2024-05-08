@@ -1,0 +1,103 @@
+import asyncio
+import ctypes
+import subprocess
+import sys
+
+
+def is_admin():
+    """Check if the script is run as an administrator."""
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+
+
+def get_installed_programs():
+    """Get a list of installed programs using WMIC."""
+    result = subprocess.run(['wmic', 'product', 'get', 'name'], capture_output=True, text=True)
+    if result.returncode != 0:
+        print("Failed to query installed programs.")
+        sys.exit(1)
+
+    programs = result.stdout.split('\n')[1:]
+    programs = [prog.strip() for prog in programs if prog.strip()]
+    programs.sort()
+    return programs
+
+
+def choose_programs_to_uninstall(programs):
+    """Allow the user to choose programs to uninstall."""
+    for index, program in enumerate(programs):
+        print(f"{index + 1}: {program}")
+
+    selected_indexes = input("Enter the numbers of the programs you want to uninstall (separate by comma): ")
+    try:
+        selected_indexes = [int(idx.strip()) - 1 for idx in selected_indexes.split(',') if idx.strip().isdigit()]
+        selected_programs = [programs[idx] for idx in selected_indexes if idx < len(programs)]
+    except ValueError:
+        print("Invalid input. Please enter only numbers separated by commas.")
+        return []
+
+    # Confirmation step
+    print("\nYou have selected the following programs for uninstallation:")
+    for program in selected_programs:
+        print(program)
+    if input("Type 'yes' to confirm: ").lower() != 'yes':
+        print("Uninstallation cancelled.")
+        return []
+
+    return selected_programs
+
+
+async def uninstall_program(program):
+    """Asynchronously uninstall a program."""
+    print(f"Starting uninstallation of {program}...")
+    process = await asyncio.create_subprocess_shell(
+        f'wmic product where name="{program}" call uninstall',
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
+    stdout, stderr = await process.communicate()
+
+    if process.returncode == 0 and 'ReturnValue = 0' in str(stdout):
+        print(f"Successfully uninstalled {program}.")
+        return program
+    else:
+        error_message = str(stderr.decode()).strip() or "Unknown error occurred."
+        print(f"Failed to uninstall {program}: {error_message}")
+        return None
+
+
+async def uninstall_programs(programs):
+    """Asynchronously uninstall multiple programs."""
+    tasks = [uninstall_program(program) for program in programs]
+    completed, pending = await asyncio.wait(tasks, return_when=asyncio.ALL_COMPLETED)
+    uninstalled_programs = [task.result() for task in completed if task.result() is not None]
+    return uninstalled_programs
+
+
+def main():
+    """Main function to manage the uninstallation process."""
+    if not is_admin():
+        print("This script requires administrative privileges.")
+        return
+
+    print("Querying installed programs...")
+    installed_programs = get_installed_programs()
+
+    if not installed_programs:
+        print("No installed programs found.")
+        return
+
+    selected_programs = choose_programs_to_uninstall(installed_programs)
+    if not selected_programs:
+        print("No programs selected for uninstallation.")
+        return
+
+    print("Proceeding with the uninstallation of selected programs...")
+    asyncio.run(uninstall_programs(selected_programs))
+    print("\nUninstallation process completed.")
+
+
+if __name__ == "__main__":
+    main()
